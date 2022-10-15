@@ -1,0 +1,29 @@
+JEST has issues with ES Modules (import/export)
+So PLEASE install Babel transpiler as
+	
+	npm install --save-dev @babel/preset-env
+
+Make a file .babelrc and place the following
+	
+	{
+  		"presets": ["@babel/preset-env"]
+	}
+
+Also install babel-jest as "npm install babel-jest"
+
+In package.json file, 
+
+"scripts": {
+    "test": "node_modules/.bin/jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  }
+
+extensions of test case files
+.test.js
+.spec.js
+
+then we can run as "npm run test" 
